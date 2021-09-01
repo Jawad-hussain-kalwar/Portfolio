@@ -1,9 +1,4 @@
-/**
-* Template Name: Baker - v4.3.0
-* Template URL: https://bootstrapmade.com/baker-free-onepage-bootstrap-theme/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -159,55 +154,26 @@
   });
 
   /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
    * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
+    let projectContainer = select('.project-container');
+    if (projectContainer) {
+      let projectIsotope = new Isotope(projectContainer, {
+        itemSelector: '.project-item',
         layoutMode: 'fitRows'
       });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+      let projectFilters = select('#project-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#project-flters li', function(e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        projectFilters.forEach(function(el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
 
-        portfolioIsotope.arrange({
+        projectIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
 
@@ -217,25 +183,25 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate project lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
+  const projectLightbox = GLightbox({
+    selector: '.project-lightbox'
   });
 
   /**
-   * Initiate portfolio details lightbox 
+   * Initiate project details lightbox 
    */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
+  const projectDetailsLightbox = GLightbox({
+    selector: '.project-details-lightbox',
     width: '90%',
     height: '90vh'
   });
 
   /**
-   * Portfolio details slider
+   * project details slider
    */
-  new Swiper('.portfolio-details-slider', {
+  new Swiper('.project-details-slider', {
     speed: 400,
     loop: true,
     autoplay: {
